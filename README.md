@@ -1,3 +1,3 @@
 # pokedex-app
 
-Based on the [@saepulnahwan's](https://www.instagram.com/saepulnahwan/) layout
+Based on [@saepulnahwan's](https://www.instagram.com/saepulnahwan/) design
