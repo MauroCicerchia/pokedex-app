@@ -5,21 +5,30 @@ import { colors, ThemeProvider } from 'react-native-elements';
 import { useColorScheme } from 'react-native-appearance';
 import Home from "./components/Home";
 
-const theme = {
+const lightTheme = {
   colors: {
     ...Platform.select({
       default: colors.platform.android,
-      ios: colors.platform.ios,
     }),
+	primary: "#FFF"
   },
 };
 
+const darkTheme = {
+	colors: {
+	  ...Platform.select({
+		default: colors.platform.android,
+	  }),
+	  primary: "#222"
+	},
+  };
+
 export default function App() {
-  const colorScheme = useColorScheme(); // TODO revisar bien esto
+  	const colorScheme = useColorScheme(); // TODO revisar bien esto
 
 	return (
 		<SafeAreaProvider>
-			<ThemeProvider useDark={colorScheme === 'dark'} theme={theme}>
+			<ThemeProvider theme={colorScheme === "dark" ? darkTheme : lightTheme}>
 				<View style={styles.container}>
 					<StatusBar />
 					<Home />

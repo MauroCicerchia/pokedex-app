@@ -1,28 +1,29 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
+import { ThemeContext } from 'react-native-elements';
 
-export default class GenerationsList extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				<Image
-					style={styles.image}
-					resizeMode="contain"
-					source={{ uri: this.props.imageUrl }}
-				/>
-				<Text style={styles.text}>Generación {this.props.generation}</Text>
-			</View>
-		);
-	}
+const GenerationsList = ({ imageUrl, generation }) => {
+	const { theme } = useContext(ThemeContext);
+	const styles = useStyles(theme);
+	
+	return (
+		<View style={styles.container}>
+			<Image
+				style={styles.image}
+				resizeMode="contain"
+				source={{ uri: imageUrl }}
+			/>
+			<Text style={styles.text}>Generación {generation}</Text>
+		</View>
+	);
 }
 
-const styles = StyleSheet.create({
+const useStyles = (theme) => StyleSheet.create({
 	container: {
 		padding: 4,
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
-		backgroundColor: "white",
 		marginVertical: 4,
 		marginHorizontal: 4,
 		borderRadius: 10,
@@ -34,6 +35,7 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.25,
 		shadowRadius: 3.95,
 		elevation: 5,
+		backgroundColor: theme.colors.primary
 	},
 	image: {
 		width: 100,
@@ -44,3 +46,5 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 	},
 });
+
+export default GenerationsList;
