@@ -27,5 +27,6 @@ export default theme =>
         text: {
             color: theme.colors.text,
             fontWeight: "bold",
+            marginTop: 5
         },
     });
