@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export default (theme) =>
+export default theme =>
     StyleSheet.create({
         container: {
             padding: 4,
@@ -25,7 +25,7 @@ export default (theme) =>
             height: 100,
         },
         text: {
-            color: "orange",
+            color: theme.colors.text,
             fontWeight: "bold",
         },
     });
