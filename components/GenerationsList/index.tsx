@@ -33,7 +33,7 @@ const data: Array<IGenerationData> = [
 	{
 		generation: "VI",
 		imageUrl:
-			"https://bestreamer.com/wp-content/uploads/2019/12/07-Chespin-Fennekin-Froakie.jpg",
+			"https://cdn.bulbagarden.net/upload/b/b7/Kalos_starters_XY_anime.png",
 	},
 	{
 		generation: "VII",

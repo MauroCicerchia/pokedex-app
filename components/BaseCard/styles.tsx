@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 export default theme =>
     StyleSheet.create({
         container: {
-            padding: 4,
+            paddingTop: 4,
+            paddingBottom: 20,
             flex: 1,
             justifyContent: "center",
             alignItems: "center",
-            marginVertical: 4,
-            marginHorizontal: 4,
+            margin: 5,
             borderRadius: 10,
             shadowColor: "#000",
             shadowOffset: {
@@ -17,16 +17,26 @@ export default theme =>
             },
             shadowOpacity: 0.25,
             shadowRadius: 3.95,
-            elevation: 5,
-            backgroundColor: theme.colors.primary,
+            elevation: 7,
+            backgroundColor: theme.colors.white,
+            overflow: "hidden",
+            maxHeight: 100
+        },
+        imageBackground: {
+            width: 100,
+            height: 100,
+            position: "absolute",
+            bottom: -25,
+            right: -25,
+            transform: [{ rotate: '-45deg' }],
         },
         image: {
             width: 100,
-            height: 100,
+            height: 50,
         },
         text: {
             color: theme.colors.text,
             fontWeight: "bold",
-            marginTop: 5
+            marginVertical: 5
         },
     });
