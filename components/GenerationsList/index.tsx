@@ -1,7 +1,8 @@
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
-import BaseCard from "./BaseCard";
-import IGenerationData from "../interfaces/IGenerationData";
+import { FlatList, View } from "react-native";
+import BaseCard from "../BaseCard";
+import styles from "./styles";
+import IGenerationData from "../../interfaces/IGenerationData";
 
 const data: Array<IGenerationData> = [
 	{
@@ -63,9 +64,3 @@ export default function GenerationsList() {
 function renderItem(data: IGenerationData) {
 	return <BaseCard {...data} />;
 }
-
-const styles = StyleSheet.create({
-	container: {
-		paddingVertical: 5,
-	},
-});
