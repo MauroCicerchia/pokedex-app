@@ -7,5 +7,6 @@ export default {
 			default: colors.platform.android,
 		}),
 		primary: "#FFF",
+		background: "#000",
 	},
 };

@@ -6,6 +6,7 @@ export default {
 		...Platform.select({
 			default: colors.platform.android,
 		}),
-		primary: "#222",
+		primary: "#000",
+		background: "#FFF",
 	},
 };
