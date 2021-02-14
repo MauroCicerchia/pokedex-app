@@ -1,30 +1,30 @@
 import React from "react";
 import { StyleSheet, View, StatusBar, Platform } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { colors, ThemeProvider } from 'react-native-elements';
-import { useColorScheme } from 'react-native-appearance';
+import { colors, ThemeProvider } from "react-native-elements";
+import { useColorScheme } from "react-native-appearance";
 import Home from "./components/Home";
 
 const lightTheme = {
-  colors: {
-    ...Platform.select({
-      default: colors.platform.android,
-    }),
-	primary: "#FFF"
-  },
+	colors: {
+		...Platform.select({
+			default: colors.platform.android,
+		}),
+		primary: "#FFF",
+	},
 };
 
 const darkTheme = {
 	colors: {
-	  ...Platform.select({
-		default: colors.platform.android,
-	  }),
-	  primary: "#222"
+		...Platform.select({
+			default: colors.platform.android,
+		}),
+		primary: "#222",
 	},
-  };
+};
 
 export default function App() {
-  	const colorScheme = useColorScheme(); // TODO revisar bien esto
+	const colorScheme = useColorScheme(); // TODO revisar bien esto
 
 	return (
 		<SafeAreaProvider>

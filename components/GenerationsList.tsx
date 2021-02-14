@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import BaseCard from "./BaseCard";
+import IGenerationData from "../interfaces/IGenerationData";
 
-const data: Array<GenerationData> = [
+const data: Array<IGenerationData> = [
 	{
 		generation: "I",
 		imageUrl:
@@ -45,33 +46,26 @@ const data: Array<GenerationData> = [
 	},
 ];
 
-export default class GenerationsList extends Component {
-	render() {
-		// TODO hay un footer blanco y se nota la separación con las Cards
-		return (
-			<View style={styles.container}>
-				<FlatList
-					data={data}
-					renderItem={({ item }) => this.renderItem(item)}
-					keyExtractor={(_, id) => id.toString()}
-					numColumns={2}
-				/>
-			</View>
-		);
-	}
+export default function GenerationsList() {
+	// TODO hay un footer blanco y se nota la separación con las Cards
+	return (
+		<View style={styles.container}>
+			<FlatList
+				data={data}
+				renderItem={({ item }) => renderItem(item)}
+				keyExtractor={(_, id) => id.toString()}
+				numColumns={2}
+			/>
+		</View>
+	);
+}
 
-	renderItem(data: GenerationData) {
-		return <BaseCard {...data} />;
-	}
+function renderItem(data: IGenerationData) {
+	return <BaseCard {...data} />;
 }
 
 const styles = StyleSheet.create({
 	container: {
-		paddingVertical: 5
+		paddingVertical: 5,
 	},
 });
-
-interface GenerationData {
-	generation: String,
-	imageUrl: String,
-}
