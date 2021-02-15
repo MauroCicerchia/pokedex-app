@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { SafeAreaView, Text } from "react-native";
 import { SearchBar, ThemeContext } from "react-native-elements";
 import useStyles from "./styles";
-import GenerationsList from "../../components/GenerationsList";
+import PokemonList from "../../components/PokemonList";
 import PokeApi from "../../services/pokeApi";
 import IPokemon from "../../interfaces/IPokemon";
 
@@ -10,7 +10,7 @@ const pokeApi = new PokeApi();
 
 export default function Home({ route: { params: { generation }} }: any) {
 	const { theme } = useContext(ThemeContext);
-	const [filterBy, setFilter] = useState();
+	const [filterBy, setFilter] = useState('');
 	const [pokemons, setPokemons] = useState([]);
 	const styles = useStyles(theme);
 
@@ -25,7 +25,7 @@ export default function Home({ route: { params: { generation }} }: any) {
 				onChangeText={setFilter}
 				value={filterBy}
 			/>
-			<GenerationsList data={pokemons.filter(({ name }: IPokemon) => name.includes(filterBy))}/>
+			<PokemonList data={pokemons.filter(({ name }: IPokemon) => name.toLowerCase().includes(filterBy.toLowerCase()))}/>
 		</SafeAreaView>
 	);
 }

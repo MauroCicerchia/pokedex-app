@@ -2,10 +2,10 @@ import React, { useState, useContext } from "react";
 import { SafeAreaView, Text } from "react-native";
 import { ThemeContext } from "react-native-elements";
 import GenerationsList from "../../components/GenerationsList";
-import IGenerationData from "../../interfaces/IGenerationData";
+import IGeneration from "../../interfaces/IGeneration";
 import useStyles from "./styles";
 
-const data: Array<IGenerationData> = [
+const data: Array<IGeneration> = [
 	{
 		generation: "I",
 		image: require("../../images/generations/first-generation.png"),

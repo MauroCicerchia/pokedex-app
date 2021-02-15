@@ -1,4 +1,4 @@
-interface IPokemonData {
+export default interface IPokemon {
 	id: Number;
 	name: string;
 	sprite: string;

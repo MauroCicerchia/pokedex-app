@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, View } from "react-native";
+import React from "react";
 import GenerationCard from "../GenerationCard";
-import styles from "./styles";
 import IGeneration from "../../interfaces/IGeneration";
-import IPokemon from "../../interfaces/IPokemon";
+import BaseList from "../BaseList";
 
-export default function GenerationsList(props: GenerationListProps) {
-	// TODO hay un footer blanco y se nota la separación con las Cards
-	return (
-		<View style={styles.container}>
-			<FlatList
-				data={props.data}
-				renderItem={({ item }) => renderItem(item)}
-				keyExtractor={(_, id) => id.toString()}
-				numColumns={2}
-			/>
-		</View>
-	);
+export default function GenerationsList({ data }: GenerationListProps) {
+	return <BaseList data={data} renderItem={renderItem}></BaseList>;
 }
 
-const renderItem = (data: IGeneration | IPokemon) => <GenerationCard {...data} />;
+const renderItem = (data: IGeneration) => <GenerationCard {...data} />;
 
 interface GenerationListProps {
-	data: Array<IGeneration | IPokemon>
+	data: Array<IGeneration>
 };
