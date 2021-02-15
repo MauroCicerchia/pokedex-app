@@ -6,9 +6,9 @@ import IGenerationData from "../../interfaces/IGenerationData";
 
 export default function BaseCard({ imageUrl, generation }: IGenerationData	) {
 	const { theme } = useContext(ThemeContext);
-	console.log("BaseCard", theme)
 	const styles = useStyles(theme);
-	const backgroundSource = require('../../images/pokeball.png');
+	console.log(theme)
+	const backgroundSource = theme.dark ? require("../../images/pokeball-dark.png") : require("../../images/pokeball-light.png");
 
 	return (
 		<View style={styles.container}>
