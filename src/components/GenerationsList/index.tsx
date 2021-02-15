@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, View } from "react-native";
-import BaseCard from "../BaseCard";
+import GenerationCard from "../GenerationCard";
 import styles from "./styles";
 import IGeneration from "../../interfaces/IGeneration";
 import IPokemon from "../../interfaces/IPokemon";
@@ -19,7 +19,7 @@ export default function GenerationsList(props: GenerationListProps) {
 	);
 }
 
-const renderItem = (data: IGeneration | IPokemon) => <BaseCard {...data} />;
+const renderItem = (data: IGeneration | IPokemon) => <GenerationCard {...data} />;
 
 interface GenerationListProps {
 	data: Array<IGeneration | IPokemon>

@@ -4,6 +4,7 @@ import { SearchBar, ThemeContext } from "react-native-elements";
 import useStyles from "./styles";
 import GenerationsList from "../../components/GenerationsList";
 import PokeApi from "../../services/pokeApi";
+import IPokemon from "../../interfaces/IPokemon";
 
 const pokeApi = new PokeApi();
 
@@ -24,7 +25,7 @@ export default function Home({ route: { params: { generation }} }: any) {
 				onChangeText={setFilter}
 				value={filterBy}
 			/>
-			<GenerationsList data={pokemons}/>
+			<GenerationsList data={pokemons.filter(({ name }: IPokemon) => name.includes(filterBy))}/>
 		</SafeAreaView>
 	);
 }

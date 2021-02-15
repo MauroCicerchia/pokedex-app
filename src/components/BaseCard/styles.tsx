@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export default theme =>
+export default (theme: any) =>
     StyleSheet.create({
         container: {
             paddingTop: 4,
@@ -29,14 +29,5 @@ export default theme =>
             bottom: -25,
             right: -25,
             transform: [{ rotate: '-45deg' }],
-        },
-        image: {
-            width: 100,
-            height: 50,
-        },
-        text: {
-            color: theme.colors.text,
-            fontWeight: "bold",
-            marginVertical: 5
         },
     });
