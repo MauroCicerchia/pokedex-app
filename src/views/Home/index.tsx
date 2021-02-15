@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { View, Text } from "react-native";
+import { SafeAreaView, Text } from "react-native";
 import { ThemeContext } from "react-native-elements";
 import GenerationsList from "../../components/GenerationsList";
 import useStyles from "./styles";
@@ -9,9 +9,9 @@ export default function Home() {
 	const styles = useStyles(theme);
 
 	return (
-		<View>
+		<SafeAreaView style={styles.container}>
 			<Text style={styles.title}>Pokédex</Text>
 			<GenerationsList />
-		</View>
+		</SafeAreaView>
 	);
 }
