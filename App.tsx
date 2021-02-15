@@ -3,8 +3,8 @@ import { StyleSheet, View, StatusBar } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "react-native-elements";
 import { useColorScheme } from "react-native-appearance";
-import themes from "./themes";
-import Home from "./components/Home";
+import themes from "./src/themes";
+import Home from "./src/views/Home";
 
 export default function App() {
 	// const colorScheme = useColorScheme();
