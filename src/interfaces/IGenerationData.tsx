@@ -1,4 +1,4 @@
 export default interface IGenerationData {
 	generation: String;
-	imageUrl: String;
+	image: any;
 }

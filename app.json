@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "pokedex-app",
+    "name": "Pokédex",
     "slug": "pokedex-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/icon.png",
+    "icon": "./src/assets/pokeball-dark.png",
     "splash": {
       "image": "./src/assets/splash.png",
       "resizeMode": "contain",
@@ -21,9 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/pokeball-dark.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.mando.pokedex"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
