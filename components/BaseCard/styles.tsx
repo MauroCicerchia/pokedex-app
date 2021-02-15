@@ -18,7 +18,7 @@ export default theme =>
             shadowOpacity: 0.25,
             shadowRadius: 3.95,
             elevation: 7,
-            backgroundColor: theme.colors.white,
+            backgroundColor: theme.colors.backgroundSecondary,
             overflow: "hidden",
             maxHeight: 100
         },

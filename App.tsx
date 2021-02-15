@@ -7,8 +7,9 @@ import themes from "./themes";
 import Home from "./components/Home";
 
 export default function App() {
-	const colorScheme = useColorScheme();
-	const theme = themes[colorScheme] || themes.dark;
+	// const colorScheme = useColorScheme();
+	// const theme = themes[colorScheme] || themes.dark;
+	const theme = themes.dark;
 	const styles = useStyles(theme);
 
 	return (
@@ -31,5 +32,6 @@ const useStyles = (theme) => StyleSheet.create({
 	title: {
 		fontSize: 32,
 		fontWeight: "700",
+		color: theme.colors.text
 	},
 });

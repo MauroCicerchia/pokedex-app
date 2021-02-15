@@ -4,8 +4,9 @@ import { ThemeContext } from "react-native-elements";
 import useStyles from "./styles";
 import IGenerationData from "../../interfaces/IGenerationData";
 
-export default function GenerationsList({ imageUrl, generation }: IGenerationData) {
+export default function BaseCard({ imageUrl, generation }: IGenerationData	) {
 	const { theme } = useContext(ThemeContext);
+	console.log("BaseCard", theme)
 	const styles = useStyles(theme);
 	const backgroundSource = require('../../images/pokeball.png');
 

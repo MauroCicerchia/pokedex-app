@@ -4,6 +4,7 @@ declare module 'react-native-elements' {
 
   export interface Colors {
     background: string;
+    backgroundSecondary: string;
     border: string;
     text: string;
   }
