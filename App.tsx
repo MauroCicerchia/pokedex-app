@@ -1,37 +1,39 @@
+import 'react-native-gesture-handler';
 import React from "react";
-import { StyleSheet, View, StatusBar } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { ThemeProvider } from "react-native-elements";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { useColorScheme } from "react-native-appearance";
+import { ThemeProvider } from "react-native-elements";
 import themes from "./src/themes";
-import Home from "./src/views/Home";
+import HomeScreen from "./src/views/Home";
+
+const Stack = createStackNavigator();
 
 export default function App() {
-	// const colorScheme = useColorScheme();
+	const colorScheme = useColorScheme();
 	// const theme = themes[colorScheme] || themes.dark;
 	const theme = themes.dark;
-	const styles = useStyles(theme);
 
 	return (
-		<SafeAreaProvider>
+		<NavigationContainer>
 			<ThemeProvider theme={theme}>
-				<View style={styles.container}>
-					<StatusBar />
-					<Home />
-				</View>
+				<Stack.Navigator>
+					<Stack.Screen
+						name="Home"
+						component={HomeScreen}
+						options={{
+							title: 'My home',
+							headerStyle: {
+								backgroundColor: '#f4511e',
+							},
+							headerTintColor: '#fff',
+							headerTitleStyle: {
+								fontWeight: 'bold',
+							},
+						}}
+					/>
+				</Stack.Navigator>
 			</ThemeProvider>
-		</SafeAreaProvider>
+		</NavigationContainer>
 	);
 }
-
-const useStyles = (theme) => StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: theme.colors.background,
-	},
-	title: {
-		fontSize: 32,
-		fontWeight: "700",
-		color: theme.colors.text
-	},
-});
