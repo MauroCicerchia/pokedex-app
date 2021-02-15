@@ -6,8 +6,12 @@ import { useColorScheme } from "react-native-appearance";
 import { ThemeProvider } from "react-native-elements";
 import themes from "./src/themes";
 import HomeScreen from "./src/views/Home";
+import GenerationDetailScreen from "./src/views/GenerationDetail";
+import IGenerationData from "./src/interfaces/IGenerationData";
 
 const Stack = createStackNavigator();
+
+const generationTitle = ({ route: { params: { generation } } }: any) => ({ title: `Generation ${generation}` });
 
 export default function App() {
 	const colorScheme = useColorScheme();
@@ -17,20 +21,21 @@ export default function App() {
 	return (
 		<NavigationContainer>
 			<ThemeProvider theme={theme}>
-				<Stack.Navigator>
+				<Stack.Navigator 
+					screenOptions={{
+						headerStyle: {
+							backgroundColor: '#f4511e',
+						},
+						headerTintColor: '#fff',
+						headerTitleStyle: {
+							fontWeight: 'bold',
+						},
+					}}>
+					<Stack.Screen name="Pokedex" component={HomeScreen} />
 					<Stack.Screen
-						name="Home"
-						component={HomeScreen}
-						options={{
-							title: 'My home',
-							headerStyle: {
-								backgroundColor: '#f4511e',
-							},
-							headerTintColor: '#fff',
-							headerTitleStyle: {
-								fontWeight: 'bold',
-							},
-						}}
+						name="Generation"
+						component={GenerationDetailScreen}
+						options={generationTitle}
 					/>
 				</Stack.Navigator>
 			</ThemeProvider>
