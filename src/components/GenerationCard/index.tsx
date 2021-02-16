@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
-import { View, Text, Image } from 'react-native'
-import { ThemeContext } from "react-native-elements";
-import { useNavigation, NavigationContext } from '@react-navigation/native';
+import React from 'react'
+import { Text, Image } from 'react-native'
+import { useTheme } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import BaseCard from '../BaseCard';
 import useStyles from "./styles";
 import IGeneration from '../../interfaces/IGeneration';
 
 export default function GenerationCard({ generation, image }: IGeneration) {
-    const { theme } = useContext(ThemeContext);
+    const theme = useTheme();
 	const navigation = useNavigation();
     const styles = useStyles(theme);
 

@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView, Text } from "react-native";
-import { SearchBar, ThemeContext } from "react-native-elements";
+import { useTheme } from '@react-navigation/native';
+import { SearchBar } from "react-native-elements";
 import useStyles from "./styles";
 import PokemonList from "../../components/PokemonList";
 import PokeApi from "../../services/pokeApi";
@@ -9,7 +10,7 @@ import IPokemon from "../../interfaces/IPokemon";
 const pokeApi = new PokeApi();
 
 export default function Home({ route: { params: { generation }} }: any) {
-	const { theme } = useContext(ThemeContext);
+	const theme = useTheme();
 	const [filterBy, setFilter] = useState('');
 	const [pokemons, setPokemons] = useState([]);
 	const styles = useStyles(theme);

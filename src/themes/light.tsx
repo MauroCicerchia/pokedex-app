@@ -9,8 +9,5 @@ export default {
 		background: "#FFFFFF",
 		backgroundSecondary: "#FFFFFF",
 		text: "#202832",
-	},
-	logos: {
-		pokeball: "pokeball-light",
 	}
 };

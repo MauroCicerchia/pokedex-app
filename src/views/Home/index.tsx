@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import { SafeAreaView, Text } from "react-native";
-import { ThemeContext } from "react-native-elements";
+import { useTheme } from '@react-navigation/native';
 import GenerationsList from "../../components/GenerationsList";
 import IGeneration from "../../interfaces/IGeneration";
 import useStyles from "./styles";
@@ -41,7 +41,7 @@ const data: Array<IGeneration> = [
 ];
 
 export default function Home() {
-	const { theme } = useContext(ThemeContext);
+	const theme = useTheme();
 	const styles = useStyles(theme);
 
 	return (
