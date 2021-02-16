@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView } from "react-native";
 import { useTheme } from '@react-navigation/native';
 import { SearchBar } from "react-native-elements";
 import useStyles from "./styles";
