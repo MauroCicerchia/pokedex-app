@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
 	View,
 	Image,
@@ -6,11 +6,11 @@ import {
 	TouchableNativeFeedback,
 	Platform,
 } from "react-native";
-import { ThemeContext } from "react-native-elements";
+import { useTheme } from '@react-navigation/native';
 import useStyles from "./styles";
 
 export default function BaseCard({ handleOnPress, children }: any) {
-	const { theme } = useContext(ThemeContext);
+	const theme = useTheme();
 	const styles = useStyles(theme);
 	const backgroundSource = theme.dark
 		? require("../../images/pokeball-dark.png")

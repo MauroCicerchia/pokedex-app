@@ -7,11 +7,6 @@ export interface Colors {
   text: string;
 }
 
-export interface Logos {
-  pokeball: string;
-}
-
 export default interface Theme {
   colors: RecursivePartial<Colors>;
-  logos: RecursivePartial<Logos>;
 }
