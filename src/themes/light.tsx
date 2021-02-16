@@ -1,12 +1,10 @@
-import { Platform } from "react-native";
-import { colors } from "react-native-elements";
+import { DefaultTheme } from '@react-navigation/native';
 
 export default {
+	...DefaultTheme,
 	dark: false,
 	colors: {
-		...Platform.select({
-			default: colors.platform.android,
-		}),
+		...DefaultTheme.colors,
 		primary: "#FFFFFF",
 		background: "#FFFFFF",
 		backgroundSecondary: "#FFFFFF",
