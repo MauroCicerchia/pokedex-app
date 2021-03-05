@@ -22,11 +22,16 @@ export default function App() {
 				<Stack.Navigator 
 					screenOptions={{
 						headerStyle: {
-							backgroundColor: '#f4511e',
+							backgroundColor: theme.colors.background
 						},
-						headerTintColor: '#fff',
+						headerTitleContainerStyle: {
+							paddingTop: 50
+						},
+						headerTitleAlign: 'left',
+						headerTintColor: theme.colors.text,
 						headerTitleStyle: {
 							fontWeight: 'bold',
+							fontSize: 36
 						},
 					}}>
 					<Stack.Screen name="Pokedex" component={HomeScreen} />

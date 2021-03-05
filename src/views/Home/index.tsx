@@ -46,7 +46,6 @@ export default function Home() {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<Text style={styles.title}>Pokédex</Text>
 			<GenerationsList data={data} />
 		</SafeAreaView>
 	);
