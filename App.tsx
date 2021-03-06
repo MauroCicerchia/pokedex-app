@@ -9,7 +9,7 @@ import GenerationDetailScreen from "./src/views/GenerationDetail";
 
 const Stack = createStackNavigator();
 
-const generationTitle = ({ route: { params: { generation } } }: any) => ({ title: `Generation ${generation}` });
+const generationTitle = ({ route: { params: { region } } }: any) => ({ title: region });
 
 export default function App() {
 	const colorScheme = useColorScheme();
@@ -33,6 +33,7 @@ export default function App() {
 							fontWeight: 'bold',
 							fontSize: 36
 						},
+						headerLeft: null
 					}}>
 					<Stack.Screen name="Pokedex" component={HomeScreen} />
 					<Stack.Screen
