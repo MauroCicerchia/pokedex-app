@@ -20,7 +20,8 @@ export default (theme: any) =>
             elevation: 7,
             backgroundColor: theme.colors.backgroundSecondary,
             overflow: "hidden",
-            maxHeight: 100
+            minHeight: 100,
+            width: 150
         },
         imageBackground: {
             width: 100,

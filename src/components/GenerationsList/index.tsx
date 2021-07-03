@@ -4,7 +4,8 @@ import IGeneration from "../../interfaces/IGeneration";
 import BaseList from "../BaseList";
 
 export default function GenerationsList({ data }: GenerationListProps) {
-	return <BaseList data={data} renderItem={renderItem}></BaseList>;
+	// TODO mejorar el maxHeight
+	return <BaseList data={data} renderItem={renderItem} contentContainerStyle={{maxHeight: "65%"}}></BaseList>;
 }
 
 const renderItem = (data: IGeneration) => <GenerationCard {...data} />;
